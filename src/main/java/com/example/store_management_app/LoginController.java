@@ -1,19 +1,14 @@
 package com.example.store_management_app;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
 import java.sql.*;
-import java.util.ResourceBundle;
 
-public class LoginController  {
+public class LoginController {
 
     @FXML
     private TextField usernameTextField;
@@ -21,14 +16,10 @@ public class LoginController  {
     @FXML
     private PasswordField passwordTextField;
 
-    @FXML
-    private Button loginBtn;
-
     // Database connection details
     private static final String DB_URL = "jdbc:mysql://localhost:1234/test-docker-connection";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "1";
-
 
     @FXML
     public void initialize() {
