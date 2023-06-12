@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.LoginController">
+   <children>
+      <Pane layoutX="303.0" layoutY="74.0" prefHeight="687.0" prefWidth="776.0">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="460.0" layoutX="147.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../948cf53cf2807837ae1924b3db02683f.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="usernameTextField" layoutX="226.0" layoutY="333.0" prefHeight="49.0" prefWidth="314.0" />
+            <PasswordField fx:id="passwordTextField" layoutX="226.0" layoutY="430.0" prefHeight="49.0" prefWidth="314.0" />
+            <Button fx:id="loginBtn" layoutX="330.0" layoutY="524.0" onAction="#loginButtonClicked" mnemonicParsing="false" prefHeight="43.0" prefWidth="94.0" text="Log in" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
