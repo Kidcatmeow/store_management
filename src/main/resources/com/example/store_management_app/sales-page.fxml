@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="totalsalesPane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.SalesPageController">
+   <children>
+      <Text layoutX="635.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <TableView fx:id="totalsalesTable" layoutX="213.0" layoutY="171.0" prefHeight="571.0" prefWidth="979.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="116.0" text="ID" />
+          <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="308.0" text="Name" />
+            <TableColumn fx:id="priceColumn" prefWidth="186.0" text="Price" />
+            <TableColumn fx:id="quantityColumn" prefWidth="185.0" text="Quantity" />
+            <TableColumn fx:id="totalsalesColumn" prefWidth="183.0" text="Total Sales" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
