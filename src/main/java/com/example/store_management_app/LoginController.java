@@ -57,13 +57,13 @@ public class LoginController {
         }
     }
 
-    public void gotonextpage(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("sales-page.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1381, 835);
-        stage.setTitle("Total Sales Page");
-        stage.setScene(scene);
-        stage.show();
-    }
+//    public void gotonextpage(Stage stage) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("sales-page.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 1381, 835);
+//        stage.setTitle("Total Sales Page");
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 
     public boolean validateLogin(String username, String password) {
         // Establish database connection

@@ -44,18 +44,11 @@ public class SalesPageController {
         priceColumn.setCellValueFactory(cellData -> cellData.getValue().getPrice().asObject());
         quantityColumn.setCellValueFactory(cellData -> cellData.getValue().getQuantity().asObject());
         totalsalesColumn.setCellValueFactory(cellData -> cellData.getValue().getTotalSales().asObject());
-//        idColumn.setText("ID");
-//        nameColumn.setText("Item Name");
-//        priceColumn.setText("Price");
-//        quantityColumn.setText("Quantity");
-//        totalsalesColumn.setText("Total Sales");
 
         // Retrieve data from the database view and populate the table
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery("SELECT * FROM item_sales_view")) {
-
-
 
 
             while (resultSet.next()) {
