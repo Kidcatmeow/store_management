@@ -11,7 +11,7 @@
             <Font size="50.0" />
          </font>
       </Text>
-      <Button fx:id="employeeBtn" layoutX="522.0" layoutY="202.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Employee" textFill="WHITE">
+      <Button fx:id="employeeBtn" layoutX="522.0" layoutY="202.0" mnemonicParsing="false" onAction="#gotoEmployeePage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Employee" textFill="WHITE">
          <font>
             <Font size="29.0" />
          </font>

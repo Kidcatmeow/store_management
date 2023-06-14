@@ -23,10 +23,10 @@ public class MainMenuController implements Initializable {
     @FXML
     Button stockBtn;
 
-//    public void gotoEmployeePage() throws IOException {
-//        AnchorPane mainpane = FXMLLoader.load(getClass().getResource(".fxml"));
-//        mainmenuPane.getChildren().setAll(mainpane);
-//    }
+    public void gotoEmployeePage() throws IOException {
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("employee-page.fxml"));
+        mainmenuPane.getChildren().setAll(mainpane);
+    }
 
     public void gotoSalesPage() throws IOException{
         AnchorPane mainpane = FXMLLoader.load(getClass().getResource("sales-page.fxml"));
