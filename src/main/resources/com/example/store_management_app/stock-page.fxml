@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StockPage">
+   <children>
+      <Text layoutX="648.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" textAlignment="CENTER" wrappingWidth="136.99111938476562">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Text layoutX="62.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="RIGHT" wrappingWidth="136.99111938476562">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="61.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item name" textAlignment="RIGHT" wrappingWidth="136.99111938476562">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="61.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="RIGHT" wrappingWidth="136.99111938476562">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <TextField fx:id="inputID" layoutX="245.0" layoutY="184.0" prefHeight="48.0" prefWidth="348.0" />
+      <TextField fx:id="inputItemName" layoutX="245.0" layoutY="248.0" prefHeight="48.0" prefWidth="348.0" />
+      <TextField fx:id="inputQuantity" layoutX="244.0" layoutY="313.0" prefHeight="48.0" prefWidth="348.0" />
+      <Button fx:id="addButton" layoutX="671.0" layoutY="753.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Add">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteButton" layoutX="845.0" layoutY="753.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Delete">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="updateButton" layoutX="1025.0" layoutY="752.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Update">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="clearButton" layoutX="1200.0" layoutY="753.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Clear">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Text layoutX="898.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Table" textAlignment="CENTER" wrappingWidth="185.64871215820312">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="870.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Out Of Stock Table" textAlignment="CENTER" wrappingWidth="271.77666635289904">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <TableView fx:id="stockTable" layoutX="651.0" layoutY="185.0" prefHeight="242.0" prefWidth="686.0">
+        <columns>
+          <TableColumn fx:id="stockID" prefWidth="105.31719970703125" text="Stock ID" />
+          <TableColumn fx:id="itemName_s" prefWidth="426.68280029296875" text="Item Name" />
+            <TableColumn fx:id="quantity" prefWidth="155.70269775390625" text="Quantity" />
+        </columns>
+      </TableView>
+      <TableView fx:id="stockTable1" layoutX="652.0" layoutY="484.0" prefHeight="242.0" prefWidth="686.0">
+         <columns>
+            <TableColumn fx:id="outOfStockID" prefWidth="101.9149169921875" text="Out of Stock ID" />
+            <TableColumn fx:id="itemName_ofs" minWidth="9.6964111328125" prefWidth="583.085205078125" text="Item Name" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
