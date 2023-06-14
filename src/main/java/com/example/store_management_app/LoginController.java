@@ -45,16 +45,16 @@ public class LoginController {
 //        loginPane.getChildren().setAll(newpage);
 
         // Validate the login credentials against the database
-        if (validateLogin(username, password)) {
-            // Login successful
-            showAlert(AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
+//        if (validateLogin(username, password)) {
+//            // Login successful
+//            showAlert(AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
             AnchorPane newpage = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
             loginPane.getChildren().setAll(newpage);
-
-        } else {
-            // Login failed
-            showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
-        }
+//
+//        } else {
+//            // Login failed
+//            showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
+//        }
     }
 
     public void gotonextpage(Stage stage) throws IOException {
