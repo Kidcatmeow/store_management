@@ -56,13 +56,31 @@ public class OrdersController {
     @FXML
     private TableColumn<Order, String> statusColumn;
 
+    public static final String DB_URL = "jdbc:mysql://localhost:1234/storemanagement";
+    public static final String DB_USERNAME = "root";
+    public static final String DB_PASSWORD = "1";
+    public Connection dbConn = null;
 
 
-    private Connection connection;
-    private Statement statement;
+    // Method to connect to the database
+    //connect to database only for the firstime
+    public Connection getConnection() throws Exception {
+
+        //if already connected --> simply return the old connection
+        if (dbConn != null) {
+            return dbConn;
+        }
+
+        //else connect
+        dbConn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+        return dbConn;
+    }
 
     // Initialize method to set up the table view and columns
-    public void initialize() {
+    public void initialize() throws Exception {
+
+        orderTableView.getItems().clear();
+
         // Set up the column mappings
         orderIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getOrderId()).asObject());
         customerIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getCustomerId()).asObject());
@@ -70,53 +88,48 @@ public class OrdersController {
         statusColumn.setCellValueFactory(cellData -> cellData.getValue().statusProperty());
 
         // Connect to the database
-        connectToDatabase();
+        Connection connection = getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM orders");
 
         // Load initial data into the table view
-        loadOrderData();
+        while (resultSet.next()) {
+            int orderId = resultSet.getInt("order_id");
+            int customerId = resultSet.getInt("customer_id");
+            String date = resultSet.getString("date");
+            String status = resultSet.getString("status");
+
+            Order order = new Order(orderId, customerId, date, status);
+            orderTableView.getItems().add(order);
+        }
 
         // Add any additional initialization code here
     }
 
-    // Method to connect to the database
-    private void connectToDatabase() {
-        try {
-            // Provide your database connection details
-            String url = "jdbc:mysql://localhost:1234/storemanagement";
-            String username = "root";
-            String password = "1";
-
-            // Establish the database connection
-            connection = DriverManager.getConnection(url, username, password);
-            statement = connection.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     // Method to load order data from the database into the table view
-    private void loadOrderData() {
-        try {
-            String query = "SELECT * FROM orders";
-            ResultSet resultSet = statement.executeQuery(query);
-
-            while (resultSet.next()) {
-                int orderId = resultSet.getInt("order_id");
-                int customerId = resultSet.getInt("customer_id");
-                String date = resultSet.getString("date");
-                String status = resultSet.getString("status");
-
-
-                Order order = new Order(orderId, customerId, date, status);
-                System.out.println(order.status);
-                orderTableView.getItems().add(order);
-            }
-
-            resultSet.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//    private void loadOrderData() {
+//        try {
+//            String query = "SELECT * FROM orders";
+//            ResultSet resultSet = statement.executeQuery(query);
+//
+//            while (resultSet.next()) {
+//                int orderId = resultSet.getInt("order_id");
+//                int customerId = resultSet.getInt("customer_id");
+//                String date = resultSet.getString("date");
+//                String status = resultSet.getString("status");
+//
+//
+//                Order order = new Order(orderId, customerId, date, status);
+//                System.out.println(order.status);
+//                orderTableView.getItems().add(order);
+//            }
+//
+//            resultSet.close();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     // Method to handle the add button action
     @FXML
@@ -131,18 +144,25 @@ public class OrdersController {
             String insertQuery = "INSERT INTO orders (order_id, customer_id, date, status) " +
                     "VALUES ('" + orderId + "', '" + customerId + "', '" + date + "', '" + status  +  "')";
 
+            Connection connection = getConnection();
+            Statement statement = connection.createStatement();
             statement.executeUpdate(insertQuery);
 
-            // Create a new Order object with the provided data
-            Order newOrder = new Order(orderId, customerId, date, status);
+            initialize();
 
-            // Add the new order to the table view
-            orderTableView.getItems().add(newOrder);
+
+//            // Create a new Order object with the provided data
+//            Order newOrder = new Order(orderId, customerId, date, status);
+//
+//            // Add the new order to the table view
+//            orderTableView.getItems().add(newOrder);
 
             // Clear the input fields
             clearInputFields();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -154,29 +174,36 @@ public class OrdersController {
         try {
             // Delete the selected order from the database
             String deleteQuery = "DELETE FROM orders WHERE order_id = '" + orderId + "'";
+            Connection connection = getConnection();
+            Statement statement = connection.createStatement();
             statement.executeUpdate(deleteQuery);
+
+            initialize();
+
 
             // Remove the selected order from the table view
             //For .remove(Int)
 //            orderTableView.getItems().remove(orderId-1);
 
             //For .remove(object))
-            Order selectedOrder = null;
-            for (Order order : orderTableView.getItems()) {
-                System.out.println(order.getOrderId());
-                if (order.getOrderId() == orderId) {
-                    selectedOrder = order;
-                    break;
-                }
-            }
-            if (selectedOrder != null) {
-                orderTableView.getItems().remove(selectedOrder);
-            }
+//            Order selectedOrder = null;
+//            for (Order order : orderTableView.getItems()) {
+//                System.out.println(order.getOrderId());
+//                if (order.getOrderId() == orderId) {
+//                    selectedOrder = order;
+//                    break;
+//                }
+//            }
+//            if (selectedOrder != null) {
+//                orderTableView.getItems().remove(selectedOrder);
+//            }
 
             // Clear the input fields
             clearInputFields();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -191,20 +218,24 @@ public class OrdersController {
         try {
             // update new order to database
             String updateQuery = "UPDATE orders SET customer_id = '" + customerId + "', date = '" + date + "', status = '" + status + "' WHERE order_id = '" + orderId +"'";
+            Connection connection = getConnection();
+            Statement statement = connection.createStatement();
             statement.executeUpdate(updateQuery);
 
-            for (Order order : orderTableView.getItems()){
-                if(order.getOrderId()==orderId){
-                    order.setCustomerId(customerId);
-                    order.setDate(date);
-                    order.setStatus(status);
-                    break;
-                }
-            }
+            initialize();
+//            for (Order order : orderTableView.getItems()){
+//                if(order.getOrderId()==orderId){
+//                    order.setCustomerId(customerId);
+//                    order.setDate(date);
+//                    order.setStatus(status);
+//                    break;
+//                }
+//            }
 
             // Clear the input fields
             clearInputFields();
-        } catch (SQLException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
