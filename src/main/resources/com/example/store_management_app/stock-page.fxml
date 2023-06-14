@@ -8,8 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StockPage">
+<AnchorPane fx:id="stockPane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StockPageController">
    <children>
       <Text layoutX="648.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" textAlignment="CENTER" wrappingWidth="136.99111938476562">
          <font>
@@ -34,22 +33,22 @@
       <TextField fx:id="inputID" layoutX="245.0" layoutY="184.0" prefHeight="48.0" prefWidth="348.0" />
       <TextField fx:id="inputItemName" layoutX="245.0" layoutY="248.0" prefHeight="48.0" prefWidth="348.0" />
       <TextField fx:id="inputQuantity" layoutX="244.0" layoutY="313.0" prefHeight="48.0" prefWidth="348.0" />
-      <Button fx:id="addButton" layoutX="671.0" layoutY="753.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Add">
+      <Button fx:id="addButton" layoutX="671.0" layoutY="753.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Add">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="deleteButton" layoutX="845.0" layoutY="753.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Delete">
+      <Button fx:id="deleteButton" layoutX="845.0" layoutY="753.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Delete">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="updateButton" layoutX="1025.0" layoutY="752.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Update">
+      <Button fx:id="updateButton" layoutX="1025.0" layoutY="752.0" mnemonicParsing="false" onAction="#updateButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Update">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="clearButton" layoutX="1200.0" layoutY="753.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="136.0" text="Clear">
+      <Button fx:id="clearButton" layoutX="1200.0" layoutY="753.0" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Clear">
          <font>
             <Font size="30.0" />
          </font>
@@ -71,7 +70,7 @@
             <TableColumn fx:id="quantity" prefWidth="155.70269775390625" text="Quantity" />
         </columns>
       </TableView>
-      <TableView fx:id="stockTable1" layoutX="652.0" layoutY="484.0" prefHeight="242.0" prefWidth="686.0">
+      <TableView fx:id="outOfSockTable" layoutX="652.0" layoutY="484.0" prefHeight="242.0" prefWidth="686.0">
          <columns>
             <TableColumn fx:id="outOfStockID" prefWidth="101.9149169921875" text="Out of Stock ID" />
             <TableColumn fx:id="itemName_ofs" minWidth="9.6964111328125" prefWidth="583.085205078125" text="Item Name" />
