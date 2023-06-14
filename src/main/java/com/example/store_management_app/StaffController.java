@@ -154,6 +154,54 @@ public class StaffController {
         initialize();
     }
 
+    @FXML
+    public void DeleteEmployee() throws Exception {
+        String id = inputID.getText();
+
+        Connection connection = getConnection();
+
+        String query = "DELETE FROM orders WHERE employee_id = '" + id + "'";
+        PreparedStatement statement = connection.prepareStatement(query);
+
+        statement.execute();
+
+        initialize();
+    }
+
+    @FXML
+    public void UpdateEmployee() throws Exception {
+        String id = inputID.getText();
+        String fname = inputFirstName.getText();
+        String lname = inputLastName.getText();
+        String gender = inputGender.getText();
+        String phone = inputPhone.getText();
+        String address = inputAddress.getText();
+        String birthdate = inputBirthdate.getText();
+        String email = inputEmail.getText();
+
+        Connection connection = getConnection();
+
+        String query = "UPDATE employee SET employee_id = '" + id + "', employee_fname = '" + fname + "', employee_lname = '" + lname + "', gender = '" + gender + "', phone = '" + phone +
+                "', address = '" + address + "', birthdate = '" + birthdate + "', email = '" + email + "' WHERE employee_id = '" + id +"'";
+
+        PreparedStatement statement = connection.prepareStatement(query);
+
+        statement.execute();
+
+        initialize();
+    }
+
+    @FXML
+    private void clearInputFields() {
+        inputID.clear();
+        inputFirstName.clear();
+        inputLastName.clear();
+        inputGender.clear();
+        inputAddress.clear();
+        inputPhone.clear();
+        inputEmail.clear();
+        inputBirthdate.clear();
+    }
 
     private static class DataRow {
         private final SimpleStringProperty id;
@@ -164,6 +212,7 @@ public class StaffController {
         private final SimpleStringProperty address;
         private final SimpleStringProperty email;
         private final SimpleStringProperty bdate;
+
 
         public DataRow(
                 String id,
