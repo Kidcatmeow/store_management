@@ -32,7 +32,7 @@ public class StockPageController {
 
     // Out of stock table
     @FXML
-    private TableView<outOfStock> outOfSockTable;
+    private TableView<outOfStock> outOfStockTable;
     @FXML
     private TableColumn<outOfStock, Integer> outOfStockID;
     @FXML
@@ -147,7 +147,7 @@ public class StockPageController {
 
         stockTable.getItems().clear();
 
-        outOfSockTable.getItems().clear();
+        outOfStockTable.getItems().clear();
 
         // Set up the column mappings
         stockID.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getStockId()).asObject());
@@ -160,27 +160,30 @@ public class StockPageController {
         // Connect to the database
         Connection connection = getConnection();
         Statement statement = connection.createStatement();
-        ResultSet resultSetStock = statement.executeQuery("SELECT * FROM stock");
-        ResultSet resultSetOutOfStock = statement.executeQuery("SELECT * FROM outofstock");
 
+        ResultSet resultSetStock = statement.executeQuery("SELECT * FROM stock");
         // Load initial data into the table view
         while (resultSetStock.next()) {
             int stockID = resultSetStock.getInt("stock_id");
             String itemName_s = resultSetStock.getString("item_name");
             int quantity = resultSetStock.getInt("quantity");
 
-            StockPageController.Stock stock = new StockPageController.Stock(stockID, itemName_s, quantity);
+            Stock stock = new Stock(stockID, itemName_s, quantity);
             stockTable.getItems().add(stock);
         }
+        resultSetStock.close();
 
+        ResultSet resultSetOutOfStock = statement.executeQuery("SELECT * FROM outofstock");
         // Add any additional initialization code here
         while (resultSetOutOfStock.next()) {
             int outOfStockID = resultSetOutOfStock.getInt("outofstock_id");
             String itemName_ofs = resultSetOutOfStock.getString("itemname");
 
-            StockPageController.outOfStock outofstock = new StockPageController.outOfStock(outOfStockID, itemName_ofs);
-            outOfSockTable.getItems().add(outofstock);
+            outOfStock Outofstock = new outOfStock(outOfStockID, itemName_ofs);
+            outOfStockTable.getItems().add(Outofstock);
         }
+        resultSetOutOfStock.close();
+
     }
 
 //        String query ="SELECT * from stock inner join outofstock on stock.item_name = outofstock.itemname";

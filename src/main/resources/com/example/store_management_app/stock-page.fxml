@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="stockPane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StockPageController">
+<AnchorPane fx:id="stockPane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StockPageController">
    <children>
       <Text layoutX="648.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" textAlignment="CENTER" wrappingWidth="136.99111938476562">
          <font>
@@ -70,7 +66,7 @@
             <TableColumn fx:id="quantity" prefWidth="142.0001220703125" text="Quantity" />
         </columns>
       </TableView>
-      <TableView fx:id="outOfSockTable" layoutX="638.0" layoutY="418.0" prefHeight="192.0" prefWidth="623.0">
+      <TableView fx:id="outOfStockTable" layoutX="638.0" layoutY="418.0" prefHeight="192.0" prefWidth="623.0">
          <columns>
             <TableColumn fx:id="outOfStockID" prefWidth="101.9149169921875" text="Out of Stock ID" />
             <TableColumn fx:id="itemName_ofs" minWidth="9.6964111328125" prefWidth="520.0" text="Item Name" />
