@@ -2,15 +2,11 @@ package com.example.store_management_app;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
@@ -45,25 +41,25 @@ public class LoginController {
 //        loginPane.getChildren().setAll(newpage);
 
         // Validate the login credentials against the database
-        if (validateLogin(username, password)) {
-            // Login successful
-            showAlert(AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
+//        if (validateLogin(username, password)) {
+//            // Login successful
+//            showAlert(AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
             AnchorPane newpage = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
             loginPane.getChildren().setAll(newpage);
-
-        } else {
-            // Login failed
-            showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
-        }
+//
+//        } else {
+//            // Login failed
+//            showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
+//        }
     }
 
-    public void gotonextpage(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("sales-page.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1381, 835);
-        stage.setTitle("Total Sales Page");
-        stage.setScene(scene);
-        stage.show();
-    }
+//    public void gotonextpage(Stage stage) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("sales-page.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 1381, 835);
+//        stage.setTitle("Total Sales Page");
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 
     public boolean validateLogin(String username, String password) {
         // Establish database connection

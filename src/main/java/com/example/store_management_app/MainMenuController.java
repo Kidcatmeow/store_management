@@ -23,25 +23,25 @@ public class MainMenuController implements Initializable {
     @FXML
     Button stockBtn;
 
-//    public void gotoEmployeePage() throws IOException {
-//        AnchorPane mainpane = FXMLLoader.load(getClass().getResource(".fxml"));
-//        mainmenuPane.getChildren().setAll(mainpane);
-//    }
+    public void gotoEmployeePage() throws IOException {
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("employee-page.fxml"));
+        mainmenuPane.getChildren().setAll(mainpane);
+    }
 
     public void gotoSalesPage() throws IOException{
         AnchorPane mainpane = FXMLLoader.load(getClass().getResource("sales-page.fxml"));
         mainmenuPane.getChildren().setAll(mainpane);
     }
 
-//    public void gotoOrdersPage() throws IOException{
+    public void gotoOrdersPage() throws IOException{
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("orders-page.fxml"));
+        mainmenuPane.getChildren().setAll(mainpane);
+    }
+//
+//    public void gotoStockPage() throws IOException{
 //        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("ChangeAppointment.fxml"));
 //        mainmenuPane.getChildren().setAll(mainpane);
 //    }
-
-    public void gotoStockPage() throws IOException{
-        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("stock-page.fxml"));
-        mainmenuPane.getChildren().setAll(mainpane);
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
