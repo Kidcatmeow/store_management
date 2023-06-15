@@ -48,7 +48,7 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="clearButton" layoutX="1113.0" layoutY="642.0" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Clear">
+      <Button fx:id="clearButton" layoutX="1113.0" layoutY="642.0" mnemonicParsing="false" onAction="#clearInputFields" prefHeight="60.0" prefWidth="136.0" text="Clear">
          <font>
             <Font size="30.0" />
          </font>

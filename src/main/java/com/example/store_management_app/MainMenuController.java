@@ -37,11 +37,11 @@ public class MainMenuController implements Initializable {
         AnchorPane mainpane = FXMLLoader.load(getClass().getResource("orders-page.fxml"));
         mainmenuPane.getChildren().setAll(mainpane);
     }
-//
-//    public void gotoStockPage() throws IOException{
-//        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("ChangeAppointment.fxml"));
-//        mainmenuPane.getChildren().setAll(mainpane);
-//    }
+
+    public void gotoStockPage() throws IOException{
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("stock-page.fxml"));
+        mainmenuPane.getChildren().setAll(mainpane);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

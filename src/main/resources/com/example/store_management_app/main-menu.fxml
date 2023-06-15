@@ -26,7 +26,7 @@
             <Font size="29.0" />
          </font>
       </Button>
-      <Button fx:id="stockBtn" layoutX="522.0" layoutY="597.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Stock" textFill="WHITE">
+      <Button fx:id="stockBtn" layoutX="522.0" layoutY="597.0" mnemonicParsing="false" onAction="#gotoStockPage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Stock" textFill="WHITE">
          <font>
             <Font size="29.0" />
          </font>

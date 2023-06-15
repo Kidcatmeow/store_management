@@ -160,7 +160,7 @@ public class StaffController {
 
         Connection connection = getConnection();
 
-        String query = "DELETE FROM orders WHERE employee_id = '" + id + "'";
+        String query = "DELETE FROM employee WHERE employee_id = '" + id + "'";
         PreparedStatement statement = connection.prepareStatement(query);
 
         statement.execute();
