@@ -98,15 +98,12 @@ public class SalesPageController {
         public SimpleStringProperty getName() {
             return  this.name;
         }
-
         public SimpleDoubleProperty getPrice() {
             return price;
         }
-
         public SimpleIntegerProperty getQuantity() {
             return quantity;
         }
-
         public SimpleDoubleProperty getTotalSales() {
             return totalSales;
         }
