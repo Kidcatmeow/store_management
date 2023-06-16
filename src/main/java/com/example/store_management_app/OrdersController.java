@@ -6,15 +6,21 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.sql.*;
 
 
 public class OrdersController {
+
+    @FXML
+    AnchorPane ordersPane;
 
     @FXML
     private TextField inputorder;
@@ -247,6 +253,13 @@ public class OrdersController {
         inputdate.clear();
         inputstatus.clear();
     }
+
+    @FXML
+    private void backBtn() throws IOException {
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
+        ordersPane.getChildren().setAll(mainpane);
+    }
+
     public class Order {
         private final IntegerProperty orderId;
         private final IntegerProperty customerId;

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.OrdersController">
+<AnchorPane fx:id="ordersPane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.OrdersController">
    <children>
       <Text layoutX="635.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orders">
          <font>
@@ -67,5 +67,6 @@
             <Font size="30.0" />
          </font>
       </Button>
+      <Button fx:id="backBtn" layoutX="40.0" layoutY="30.0" mnemonicParsing="false" onAction="#backBtn" text="Back" />
    </children>
 </AnchorPane>

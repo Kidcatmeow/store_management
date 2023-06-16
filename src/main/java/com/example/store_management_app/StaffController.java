@@ -2,14 +2,20 @@ package com.example.store_management_app;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class StaffController {
+
+    @FXML
+    AnchorPane staffpagePane;
 
     @FXML
     private TextField inputID;
@@ -201,6 +207,12 @@ public class StaffController {
         inputPhone.clear();
         inputEmail.clear();
         inputBirthdate.clear();
+    }
+
+    @FXML
+    private void backBtn() throws IOException {
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
+        staffpagePane.getChildren().setAll(mainpane);
     }
 
     private static class DataRow {

@@ -4,12 +4,19 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.sql.*;
 
+
 public class SalesPageController {
+
+    @FXML
+    AnchorPane totalsalesPane;
 
     // Database connection details
     public static final String DB_URL = "jdbc:mysql://localhost:1234/storemanagement";
@@ -33,6 +40,7 @@ public class SalesPageController {
 
     @FXML
     private TableColumn<DataRow, Double> totalsalesColumn;
+
 
     @FXML
     public void initialize() {
@@ -64,6 +72,12 @@ public class SalesPageController {
             e.printStackTrace();
             // Handle any exceptions here
         }
+    }
+
+    @FXML
+    private void backBtn() throws IOException {
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
+        totalsalesPane.getChildren().setAll(mainpane);
     }
 
     // A simple data model class representing a row in the view

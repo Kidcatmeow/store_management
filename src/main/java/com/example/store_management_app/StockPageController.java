@@ -3,6 +3,7 @@ package com.example.store_management_app;
 import javafx.beans.property.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
@@ -122,6 +123,12 @@ public class StockPageController {
         inputID.clear();
         inputItemName.clear();
         inputQuantity.clear();
+    }
+
+    @FXML
+    private void backBtn() throws IOException {
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
+        stockPane.getChildren().setAll(mainpane);
     }
 
     // Database connection details

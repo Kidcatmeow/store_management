@@ -43,6 +43,11 @@ public class MainMenuController implements Initializable {
         mainmenuPane.getChildren().setAll(mainpane);
     }
 
+    @FXML
+    private void backBtn() throws IOException {
+        AnchorPane mainpane = FXMLLoader.load(getClass().getResource("login-view.fxml"));
+        mainmenuPane.getChildren().setAll(mainpane);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
