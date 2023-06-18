@@ -1,12 +1,11 @@
 package com.example.store_management_app;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -27,7 +26,7 @@ public class StaffController {
     private TextField inputLastName;
 
     @FXML
-    private TextField inputGender;
+    private ComboBox<String> inputgender;
 
     @FXML
     private TextField inputPhone;
@@ -39,7 +38,7 @@ public class StaffController {
     private TextField inputEmail;
 
     @FXML
-    private TextField inputBirthdate;
+    private DatePicker inputBirthdate;
 
     @FXML
     private Button addEmployeeBtn;
@@ -100,6 +99,9 @@ public class StaffController {
 
     @FXML
     public void initialize() throws Exception {
+        ObservableList<String> genderChoices = FXCollections.observableArrayList("Male", "Female");
+        inputgender.setItems(genderChoices);
+
         employeeTableView.getItems().clear();
         idColumn.setCellValueFactory(cellData -> cellData.getValue().getId());
         fnameColumn.setCellValueFactory(cellData -> cellData.getValue().getFname());
@@ -136,11 +138,11 @@ public class StaffController {
         String id = inputID.getText();
         String fname = inputFirstName.getText();
         String lname = inputLastName.getText();
-        String gender = inputGender.getText();
         String phone = inputPhone.getText();
         String address = inputAddress.getText();
-        String birthdate = inputBirthdate.getText();
         String email = inputEmail.getText();
+        String birthdate = inputBirthdate.getValue().toString();
+        String gender = inputgender.getValue();
 
         Connection connection = getConnection();
 
@@ -179,11 +181,11 @@ public class StaffController {
         String id = inputID.getText();
         String fname = inputFirstName.getText();
         String lname = inputLastName.getText();
-        String gender = inputGender.getText();
         String phone = inputPhone.getText();
         String address = inputAddress.getText();
-        String birthdate = inputBirthdate.getText();
         String email = inputEmail.getText();
+        String birthdate = inputBirthdate.getValue().toString();
+        String gender = inputgender.getValue();
 
         Connection connection = getConnection();
 
@@ -202,11 +204,12 @@ public class StaffController {
         inputID.clear();
         inputFirstName.clear();
         inputLastName.clear();
-        inputGender.clear();
         inputAddress.clear();
         inputPhone.clear();
         inputEmail.clear();
-        inputBirthdate.clear();
+        inputBirthdate.setValue(null);
+        inputgender.getSelectionModel().clearSelection();
+
     }
 
     @FXML

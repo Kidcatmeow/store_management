@@ -8,6 +8,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.DatePicker?>
 <AnchorPane fx:id="staffpagePane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StaffController">
     <children>
         <Text layoutX="636.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff">
@@ -58,11 +62,18 @@
         <TextField fx:id="inputID" layoutX="288.0" layoutY="124.0" prefHeight="34.0" prefWidth="370.0" />
         <TextField fx:id="inputFirstName" layoutX="288.0" layoutY="182.0" prefHeight="34.0" prefWidth="371.0" />
         <TextField fx:id="inputLastName" layoutX="288.0" layoutY="241.0" prefHeight="34.0" prefWidth="371.0" />
-        <TextField fx:id="inputGender" layoutX="288.0" layoutY="303.0" prefHeight="34.0" prefWidth="371.0" />
+        <ComboBox fx:id="inputgender" layoutX="288.0" layoutY="303.0" prefHeight="34.0" prefWidth="371.0" >
+            <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Male" />
+                <String fx:value="Female" />
+            </FXCollections>
+            </items>
+        </ComboBox>
         <TextField fx:id="inputPhone" layoutX="288.0" layoutY="361.0" prefHeight="34.0" prefWidth="371.0" />
         <TextField fx:id="inputAddress" layoutX="288.0" layoutY="424.0" prefHeight="34.0" prefWidth="371.0" />
         <TextField fx:id="inputEmail" layoutX="288.0" layoutY="483.0" prefHeight="34.0" prefWidth="371.0" />
-        <TextField fx:id="inputBirthdate" layoutX="288.0" layoutY="540.0" prefHeight="34.0" prefWidth="371.0" />
+        <DatePicker fx:id="inputBirthdate" layoutX="288.0" layoutY="540.0" prefHeight="34.0" prefWidth="371.0" />
         <TableView fx:id="employeeTableView" layoutX="690.0" layoutY="117.0" prefHeight="458.0" prefWidth="677.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="84.7999267578125" text="employee_id" />

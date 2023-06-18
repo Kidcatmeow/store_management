@@ -1,6 +1,7 @@
 package com.example.store_management_app;
 
 import javafx.beans.property.*;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StockPageController {
 
@@ -17,7 +20,9 @@ public class StockPageController {
     @FXML
     private TextField inputID;
     @FXML
+//    private ComboBox<String> inputItemName;
     private TextField inputItemName;
+
     @FXML
     private TextField inputQuantity;
 
@@ -44,6 +49,7 @@ public class StockPageController {
     @FXML
     private void addButtonClicked(ActionEvent event) throws IOException {
         int stockID = Integer.parseInt(inputID.getText());
+//        String itemName_s = inputItemName.getValue();
         String itemName_s = inputItemName.getText();
         int quantity = Integer.parseInt(inputQuantity.getText());
 
@@ -96,6 +102,7 @@ public class StockPageController {
     @FXML
     private void updateButtonClicked(ActionEvent event) throws IOException {
         int stockID = Integer.parseInt(inputID.getText());
+//        String itemName_s = inputItemName.getValue();
         String itemName_s = inputItemName.getText();
         int quantity = Integer.parseInt(inputQuantity.getText());
 
@@ -121,6 +128,7 @@ public class StockPageController {
     @FXML
     private void clearInputFields() throws IOException {
         inputID.clear();
+//        inputItemName.getSelectionModel().clearSelection();
         inputItemName.clear();
         inputQuantity.clear();
     }
@@ -168,6 +176,15 @@ public class StockPageController {
         Connection connection = getConnection();
         Statement statement = connection.createStatement();
 
+//        ResultSet resultSetComboBox = statement.executeQuery("SELECT item_name FROM stock");
+//        List<String> items = new ArrayList<>();
+//        while (resultSetComboBox.next()) {
+//            String itemName = resultSetComboBox.getString("item_name");
+//            items.add(itemName);
+//        }
+//        inputItemName.setItems(FXCollections.observableArrayList(items));
+//        resultSetComboBox.close();
+
         ResultSet resultSetStock = statement.executeQuery("SELECT * FROM stock");
         // Load initial data into the table view
         while (resultSetStock.next()) {
@@ -190,6 +207,10 @@ public class StockPageController {
             outOfStockTable.getItems().add(Outofstock);
         }
         resultSetOutOfStock.close();
+
+
+
+
 
     }
 

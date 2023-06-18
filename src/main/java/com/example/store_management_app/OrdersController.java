@@ -4,14 +4,14 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ComboBox;
 
 import java.io.IOException;
 import java.sql.*;
@@ -29,10 +29,10 @@ public class OrdersController {
     private TextField inputcustomer;
 
     @FXML
-    private TextField inputdate;
+    private DatePicker inputdate;
 
     @FXML
-    private TextField inputstatus;
+    private ComboBox<String> inputstatus;
 
     @FXML
     private Button addBtn;
@@ -85,6 +85,10 @@ public class OrdersController {
     public void initialize() throws Exception {
 
         orderTableView.getItems().clear();
+
+
+        ObservableList<String> statusChoices = FXCollections.observableArrayList("delivered", "not delivered");
+        inputstatus.setItems(statusChoices);
 
         // Set up the column mappings
         orderIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getOrderId()).asObject());
@@ -141,8 +145,8 @@ public class OrdersController {
     private void handleAddButton(ActionEvent event) {
         int orderId = Integer.parseInt(inputorder.getText());
         int customerId = Integer.parseInt(inputcustomer.getText());
-        String date = inputdate.getText();
-        String status = inputstatus.getText();
+        String date = inputdate.getValue().toString();
+        String status = inputstatus.getValue();
 
         try {
             // Insert the new order into the database
@@ -217,8 +221,9 @@ public class OrdersController {
     private void handleUpdateButton(ActionEvent event) {
         int orderId = Integer.parseInt(inputorder.getText());
         int customerId = Integer.parseInt(inputcustomer.getText());
-        String date = inputdate.getText();
-        String status = inputstatus.getText();
+        String date = inputdate.getValue().toString();
+        String status = inputstatus.getValue();
+
 
         try {
             // update new order to database
@@ -250,8 +255,8 @@ public class OrdersController {
     private void clearInputFields() {
         inputorder.clear();
         inputcustomer.clear();
-        inputdate.clear();
-        inputstatus.clear();
+        inputdate.setValue(null);
+        inputstatus.getSelectionModel().clearSelection();
     }
 
     @FXML
