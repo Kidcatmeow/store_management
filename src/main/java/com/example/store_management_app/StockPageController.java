@@ -87,8 +87,6 @@ public class StockPageController {
 
             initialize();
 
-            // Clear the input fields
-            clearInputFields();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {

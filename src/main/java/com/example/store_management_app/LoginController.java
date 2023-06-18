@@ -45,20 +45,17 @@ public class LoginController {
         String password = passwordTextField.getText();
 
 
-//        AnchorPane newpage = FXMLLoader.load(getClass().getResource("sales-page.fxml"));
-//        loginPane.getChildren().setAll(newpage);
-
         // Validate the login credentials against the database
-//        if (validateLogin(username, password)) {
-//            // Login successful
-//            showAlert(AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
+        if (validateLogin(username, password)) {
+       // Login successful
+           showAlert(AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
             AnchorPane newpage = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
             loginPane.getChildren().setAll(newpage);
-//
-//        } else {
-//            // Login failed
-//            showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
-//        }
+
+    } else {
+          // Login failed
+          showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password.");
+       }
     }
 
 //    public void gotonextpage(Stage stage) throws IOException {
@@ -77,9 +74,6 @@ public class LoginController {
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, username);
             statement.setString(2, password);
-
-//            System.out.println(username);
-//            System.out.println(password);
 
             // Execute the query
             ResultSet resultSet = statement.executeQuery();

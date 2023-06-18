@@ -112,7 +112,6 @@ public class OrdersController {
             orderTableView.getItems().add(order);
         }
 
-        // Add any additional initialization code here
     }
 
 
