@@ -1,5 +1,6 @@
 package com.example.store_management_app;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -29,6 +30,13 @@ public class LoginController {
     public void initialize() {
         usernameTextField.setPromptText("Enter your username");
         passwordTextField.setPromptText("Enter your password");
+    }
+
+
+    @FXML
+    public void exitApp() {
+        // Call the Platform.exit() method to exit the application
+        Platform.exit();
     }
 
     @FXML

@@ -8,19 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.LoginController">
+<AnchorPane fx:id="loginPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.LoginController">
    <children>
-      <Pane layoutX="303.0" layoutY="74.0" prefHeight="687.0" prefWidth="776.0">
+      <Pane layoutX="303.0" layoutY="59.0" prefHeight="687.0" prefWidth="776.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
          <children>
-            <ImageView fitHeight="156.0" fitWidth="460.0" layoutX="147.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="156.0" fitWidth="460.0" layoutX="144.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../948cf53cf2807837ae1924b3db02683f.png" />
                </image>
             </ImageView>
-            <TextField fx:id="usernameTextField" layoutX="226.0" layoutY="333.0" prefHeight="49.0" prefWidth="314.0" />
-            <PasswordField fx:id="passwordTextField" layoutX="226.0" layoutY="430.0" prefHeight="49.0" prefWidth="314.0" />
-            <Button fx:id="loginBtn" layoutX="330.0" layoutY="524.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="43.0" prefWidth="94.0" text="Log in" />
+            <TextField fx:id="usernameTextField" layoutX="286.0" layoutY="344.0" prefHeight="36.0" prefWidth="205.0" />
+            <PasswordField fx:id="passwordTextField" layoutX="286.0" layoutY="406.0" prefHeight="36.0" prefWidth="205.0" />
+            <Button fx:id="loginBtn" layoutX="364.0" layoutY="471.0" mnemonicParsing="false" onAction="#loginButtonClicked" text="Log in" />
          </children>
       </Pane>
+      <Button layoutX="70.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Exit" />
    </children>
 </AnchorPane>

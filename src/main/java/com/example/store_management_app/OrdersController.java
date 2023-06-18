@@ -166,8 +166,7 @@ public class OrdersController {
 //            // Add the new order to the table view
 //            orderTableView.getItems().add(newOrder);
 
-            // Clear the input fields
-            clearInputFields();
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -207,8 +206,6 @@ public class OrdersController {
 //                orderTableView.getItems().remove(selectedOrder);
 //            }
 
-            // Clear the input fields
-            clearInputFields();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -242,8 +239,7 @@ public class OrdersController {
 //                }
 //            }
 
-            // Clear the input fields
-            clearInputFields();
+
 
         } catch (Exception e) {
             e.printStackTrace();

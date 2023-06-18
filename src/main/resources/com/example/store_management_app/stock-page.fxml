@@ -8,74 +8,74 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="stockPane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StockPageController">
+<AnchorPane fx:id="stockPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.StockPageController">
    <children>
-      <Text layoutX="648.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" textAlignment="CENTER" wrappingWidth="136.99111938476562">
+      <Text layoutX="551.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" textAlignment="CENTER" wrappingWidth="136.99111938476562" AnchorPane.bottomAnchor="570.9915364583335" AnchorPane.leftAnchor="551.0" AnchorPane.rightAnchor="622.035522460938" AnchorPane.topAnchor="81.044921875">
          <font>
             <Font size="50.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="RIGHT" wrappingWidth="136.99111938476562">
+      <Text layoutX="124.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="RIGHT" wrappingWidth="136.99111938476562" AnchorPane.bottomAnchor="408.470703125" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="963.1166076660156" AnchorPane.topAnchor="221.529296875">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text layoutX="37.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item name" textAlignment="RIGHT" wrappingWidth="162.99111938476562">
+      <Text layoutX="124.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item name" textAlignment="RIGHT" wrappingWidth="162.99111938476562" AnchorPane.bottomAnchor="349.470703125" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="1022.0088806152344" AnchorPane.topAnchor="280.626953125">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text layoutX="50.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="RIGHT" wrappingWidth="136.99111938476562">
+      <Text layoutX="148.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="RIGHT" wrappingWidth="136.99111938476562" AnchorPane.bottomAnchor="296.568359375" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="1024.0088806152344" AnchorPane.topAnchor="338.626953125">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <TextField fx:id="inputID" layoutX="234.0" layoutY="184.0" prefHeight="48.0" prefWidth="348.0" />
-      <TextField fx:id="inputItemName" layoutX="234.0" layoutY="248.0" prefHeight="48.0" prefWidth="348.0" />
-      <TextField fx:id="inputQuantity" layoutX="233.0" layoutY="313.0" prefHeight="48.0" prefWidth="348.0" />
-      <Button fx:id="addButton" layoutX="617.0" layoutY="642.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Add">
+      <TextField fx:id="inputID" layoutX="308.0" layoutY="229.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="749.3510945638023" />
+      <TextField fx:id="inputItemName" layoutX="308.0" layoutY="289.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="256.0" AnchorPane.bottomAnchor="503.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="749.0" AnchorPane.topAnchor="289.0" />
+      <TextField fx:id="inputQuantity" layoutX="308.0" layoutY="346.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="256.0" AnchorPane.bottomAnchor="446.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="749.0" AnchorPane.topAnchor="346.0" />
+      <Button fx:id="addButton" layoutX="617.0" layoutY="654.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="72.0" prefWidth="140.0" text="Add" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="617.0" AnchorPane.rightAnchor="555.0" AnchorPane.topAnchor="654.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="deleteButton" layoutX="783.0" layoutY="642.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Delete">
+      <Button fx:id="deleteButton" layoutX="790.0" layoutY="654.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="72.0" prefWidth="140.0" text="Delete" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="790.0" AnchorPane.rightAnchor="382.0" AnchorPane.topAnchor="654.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="updateButton" layoutX="947.0" layoutY="642.0" mnemonicParsing="false" onAction="#updateButtonClicked" prefHeight="60.0" prefWidth="136.0" text="Update">
+      <Button fx:id="updateButton" layoutX="953.0" layoutY="654.0" mnemonicParsing="false" onAction="#updateButtonClicked" prefHeight="72.0" prefWidth="140.0" text="Update" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="953.0" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="654.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="clearButton" layoutX="1113.0" layoutY="642.0" mnemonicParsing="false" onAction="#clearInputFields" prefHeight="60.0" prefWidth="136.0" text="Clear">
+      <Button fx:id="clearButton" layoutX="1114.0" layoutY="654.0" mnemonicParsing="false" onAction="#clearInputFields" prefHeight="72.0" prefWidth="139.0" text="Clear" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="1114.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="654.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Text layoutX="866.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Table" textAlignment="CENTER" wrappingWidth="185.64871215820312">
+      <Text layoutX="838.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Table" textAlignment="CENTER" wrappingWidth="185.64871215820312" AnchorPane.bottomAnchor="529.9134114583333" AnchorPane.leftAnchor="838.0" AnchorPane.rightAnchor="200.45901489257812" AnchorPane.topAnchor="121.576171875">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="817.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Out Of Stock Table" textAlignment="CENTER" wrappingWidth="271.77666635289904">
+      <Text layoutX="803.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Out Of Stock Table" textAlignment="CENTER" wrappingWidth="271.77666635289904" AnchorPane.bottomAnchor="364.99153645833337" AnchorPane.leftAnchor="803.0" AnchorPane.rightAnchor="238.67000094130253" AnchorPane.topAnchor="428.576171875">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TableView fx:id="stockTable" layoutX="640.0" layoutY="185.0" prefHeight="192.0" prefWidth="623.0">
+      <TableView fx:id="stockTable" layoutX="624.0" layoutY="160.0" prefHeight="249.0" prefWidth="630.0" AnchorPane.bottomAnchor="408.0" AnchorPane.leftAnchor="624.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="160.0">
         <columns>
           <TableColumn fx:id="stockID" prefWidth="105.31719970703125" text="Stock ID" />
           <TableColumn fx:id="itemName_s" prefWidth="373.220458984375" text="Item Name" />
             <TableColumn fx:id="quantity" prefWidth="142.0001220703125" text="Quantity" />
         </columns>
       </TableView>
-      <TableView fx:id="outOfStockTable" layoutX="638.0" layoutY="418.0" prefHeight="192.0" prefWidth="623.0">
+      <TableView fx:id="outOfStockTable" layoutX="618.0" layoutY="461.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="177.0" prefWidth="642.0" AnchorPane.bottomAnchor="179.0" AnchorPane.leftAnchor="618.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="461.0">
          <columns>
             <TableColumn fx:id="outOfStockID" prefWidth="101.9149169921875" text="Out of Stock ID" />
             <TableColumn fx:id="itemName_ofs" minWidth="9.6964111328125" prefWidth="520.0" text="Item Name" />
          </columns>
       </TableView>
-      <Button fx:id="backBtn" layoutX="35.0" layoutY="27.0" mnemonicParsing="false" onAction="#backBtn" text="Back" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backBtn" prefHeight="40.0" prefWidth="84.0" text="Back" AnchorPane.bottomAnchor="763.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1215.0" AnchorPane.topAnchor="14.0" />
    </children>
 </AnchorPane>

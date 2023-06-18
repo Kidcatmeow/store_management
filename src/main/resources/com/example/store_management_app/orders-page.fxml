@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-<?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<AnchorPane fx:id="ordersPane" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.OrdersController">
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ordersPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="817.0" prefWidth="1313.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.OrdersController">
    <children>
-      <Text layoutX="635.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orders">
+      <Text layoutX="635.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orders" AnchorPane.bottomAnchor="682.451171875" AnchorPane.leftAnchor="635.0" AnchorPane.rightAnchor="528.732421875" AnchorPane.topAnchor="67.88216145833333">
          <font>
             <Font size="50.0" />
          </font>
       </Text>
-      <Text layoutX="105.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID">
+      <Text layoutX="105.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID" AnchorPane.bottomAnchor="589.470703125" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="1093.9326171875" AnchorPane.topAnchor="187.626953125">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text layoutX="105.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID">
+      <Text layoutX="105.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID" AnchorPane.bottomAnchor="516.470703125" AnchorPane.leftAnchor="104.88639322916666" AnchorPane.rightAnchor="1042.7802734375" AnchorPane.topAnchor="260.529296875">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text layoutX="105.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+      <Text layoutX="105.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" AnchorPane.bottomAnchor="443.470703125" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="1145.8466796875" AnchorPane.topAnchor="333.626953125">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text layoutX="105.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+      <Text layoutX="106.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" AnchorPane.bottomAnchor="370.470703125" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="1125.759765625" AnchorPane.topAnchor="406.626953125">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <TextField fx:id="inputorder" layoutX="303.0" layoutY="193.0" prefHeight="34.0" prefWidth="371.0" />
-      <TextField fx:id="inputcustomer" layoutX="303.0" layoutY="266.0" prefHeight="34.0" prefWidth="371.0" />
-      <DatePicker fx:id="inputdate" layoutX="303.0" layoutY="337.0" prefHeight="34.0" prefWidth="371.0" />
-      <ComboBox fx:id="inputstatus" layoutX="303.0" layoutY="410.0" prefHeight="34.0" prefWidth="371.0">
+      <TextField fx:id="inputorder" layoutX="303.0" layoutY="193.0" prefHeight="34.0" prefWidth="371.0" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="638.6666666666667" AnchorPane.topAnchor="193.0" />
+      <TextField fx:id="inputcustomer" layoutX="303.0" layoutY="263.0" prefHeight="34.0" prefWidth="371.0" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="638.6666666666667" AnchorPane.topAnchor="263.0" />
+      <DatePicker fx:id="inputdate" layoutX="303.0" layoutY="337.0" prefHeight="34.0" prefWidth="371.0" AnchorPane.bottomAnchor="446.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="638.6666666666667" AnchorPane.topAnchor="337.0" />
+      <ComboBox fx:id="inputstatus" layoutX="303.0" layoutY="410.0" prefHeight="34.0" prefWidth="371.0" AnchorPane.bottomAnchor="373.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="638.6666666666667" AnchorPane.topAnchor="410.0">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="delivered" />
@@ -44,7 +50,7 @@
             </FXCollections>
          </items>
       </ComboBox>
-      <TableView fx:id="orderTableView" layoutX="764.0" layoutY="187.0" prefHeight="398.0" prefWidth="447.0">
+      <TableView fx:id="orderTableView" layoutX="764.0" layoutY="187.0" prefHeight="398.0" prefWidth="447.0" AnchorPane.bottomAnchor="232.0" AnchorPane.leftAnchor="764.0" AnchorPane.rightAnchor="101.66666666666669" AnchorPane.topAnchor="187.0">
         <columns>
           <TableColumn fx:id="orderIdColumn" prefWidth="103.0" text="Order ID" />
           <TableColumn fx:id="customerIdColumn" prefWidth="123.0" text="Customer ID" />
@@ -52,26 +58,26 @@
             <TableColumn fx:id="statusColumn" prefWidth="112.0" text="Delivery status" />
         </columns>
       </TableView>
-      <Button fx:id="addBtn" layoutX="303.0" layoutY="679.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="84.0" prefWidth="177.0" text="Add">
+      <Button fx:id="addBtn" layoutX="325.0" layoutY="628.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="84.0" prefWidth="177.0" text="Add" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="810.6666666666666" AnchorPane.topAnchor="628.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="deleteBtn" layoutX="553.0" layoutY="679.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="84.0" prefWidth="165.0" text="Delete">
+      <Button fx:id="deleteBtn" layoutX="581.0" layoutY="628.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="84.0" prefWidth="165.0" text="Delete" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="581.0" AnchorPane.rightAnchor="566.6666666666666" AnchorPane.topAnchor="628.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="updateBtn" layoutX="807.0" layoutY="679.0" mnemonicParsing="false" onAction="#handleUpdateButton" prefHeight="84.0" prefWidth="165.0" text="Update">
+      <Button fx:id="updateBtn" layoutX="809.0" layoutY="628.0" mnemonicParsing="false" onAction="#handleUpdateButton" prefHeight="84.0" prefWidth="165.0" text="Update" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="809.0" AnchorPane.rightAnchor="338.66666666666663" AnchorPane.topAnchor="628.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="clearBtn" layoutX="1046.0" layoutY="679.0" mnemonicParsing="false" onAction="#clearInputFields" prefHeight="84.0" prefWidth="165.0" text="Clear">
+      <Button fx:id="clearBtn" layoutX="1045.0" layoutY="628.0" mnemonicParsing="false" onAction="#clearInputFields" prefHeight="84.0" prefWidth="165.0" text="Clear" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="1045.0" AnchorPane.rightAnchor="102.66666666666652" AnchorPane.topAnchor="628.0">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="backBtn" layoutX="40.0" layoutY="30.0" mnemonicParsing="false" onAction="#backBtn" text="Back" />
+      <Button fx:id="backBtn" layoutX="40.0" layoutY="30.0" mnemonicParsing="false" onAction="#backBtn" text="Back" AnchorPane.bottomAnchor="735.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="1166.0" AnchorPane.topAnchor="42.0" />
    </children>
 </AnchorPane>

@@ -5,33 +5,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainmenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1381.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.MainMenuController">
+<AnchorPane fx:id="mainmenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="817.0" prefWidth="1313.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.store_management_app.MainMenuController">
    <children>
-      <Text layoutX="564.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main Menu">
+      <Text layoutX="564.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main Menu" AnchorPane.bottomAnchor="660.451171875" AnchorPane.leftAnchor="564.0" AnchorPane.rightAnchor="496.9248046875" AnchorPane.topAnchor="90.044921875">
          <font>
             <Font size="50.0" />
          </font>
       </Text>
-      <Button fx:id="employeeBtn" layoutX="522.0" layoutY="202.0" mnemonicParsing="false" onAction="#gotoEmployeePage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Employee" textFill="WHITE">
+      <Button fx:id="employeeBtn" layoutX="522.0" layoutY="202.0" mnemonicParsing="false" onAction="#gotoEmployeePage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Employee" textFill="WHITE" AnchorPane.bottomAnchor="529.0" AnchorPane.leftAnchor="522.0" AnchorPane.rightAnchor="453.6666666666667" AnchorPane.topAnchor="202.0">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
-      <Button fx:id="salesBtn" layoutX="522.0" layoutY="334.0" mnemonicParsing="false" onAction="#gotoSalesPage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Sales" textFill="WHITE">
+      <Button fx:id="salesBtn" layoutX="522.0" layoutY="334.0" mnemonicParsing="false" onAction="#gotoSalesPage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Sales" textFill="WHITE" AnchorPane.bottomAnchor="397.0" AnchorPane.leftAnchor="522.0" AnchorPane.rightAnchor="453.6666666666667" AnchorPane.topAnchor="334.0">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
-      <Button fx:id="ordersBtn" layoutX="522.0" layoutY="466.0" mnemonicParsing="false" onAction="#gotoOrdersPage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Orders" textFill="WHITE">
+      <Button fx:id="ordersBtn" layoutX="521.0" layoutY="465.0" mnemonicParsing="false" onAction="#gotoOrdersPage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Orders" textFill="WHITE" AnchorPane.bottomAnchor="266.0" AnchorPane.leftAnchor="521.0" AnchorPane.rightAnchor="454.66666666666674" AnchorPane.topAnchor="465.0">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
-      <Button fx:id="stockBtn" layoutX="522.0" layoutY="597.0" mnemonicParsing="false" onAction="#gotoStockPage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Stock" textFill="WHITE">
+      <Button fx:id="stockBtn" layoutX="522.0" layoutY="589.0" mnemonicParsing="false" onAction="#gotoStockPage" prefHeight="86.0" prefWidth="337.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" text="Stock" textFill="WHITE" AnchorPane.bottomAnchor="142.0" AnchorPane.leftAnchor="522.0" AnchorPane.rightAnchor="453.66666666666674" AnchorPane.topAnchor="589.0">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
-      <Button fx:id="backBtn" layoutX="37.0" layoutY="29.0" mnemonicParsing="false" onAction="#backBtn" text="Back" />
+      <Button fx:id="backBtn" layoutX="101.0" layoutY="77.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="41.0" prefWidth="70.0" text="Back" AnchorPane.bottomAnchor="735.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="1166.0" AnchorPane.topAnchor="42.0" />
    </children>
 </AnchorPane>
